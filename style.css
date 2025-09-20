@@ -1,0 +1,175 @@
+/* Importação de fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Krona+One&display=swap');
+
+/* Reset básico para remover estilos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000; /* Preto - Cor de fundo principal */
+    color: #FFFFFF; /* Branco - Cor do texto principal */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilos da seção principal */
+.apresentacao {
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.apresentacao__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.apresentacao__conteudo__titulo {
+    font-family: 'Krona One', sans-serif;
+    font-size: 2.25rem;
+    color: #F08080; /* Rosa Claro - Cor de destaque */
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+}
+
+/* Estilos para os botões de link (LinkedIn, GitHub, etc.) */
+.apresentacao__links {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha */
+    gap: 16px;
+    justify-content: flex-start; /* Alinha os botões à esquerda */
+}
+
+.apresentacao__links__navegacao {
+    display: block;
+    width: 150px; /* Diminui a largura dos botões */
+    text-align: center;
+    border: 2px solid #F08080; /* Rosa Claro - Cor de destaque */
+    border-radius: 8px;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem; /* Diminui o tamanho da fonte */
+    transition: background-color 0.3s;
+}
+
+.apresentacao__links__navegacao:hover {
+    background-color: #333333; /* Cinza escuro no hover */
+}
+
+/* Nova seção para a imagem e tecnologias */
+.apresentacao__imagem__tecnologias {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.apresentacao__imagem {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover;
+    border: 3px solid #F08080; /* Adiciona uma borda rosa para destaque */
+}
+
+/* Estilos para as tags de tecnologia */
+.tecnologias-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* Centraliza as tags */
+}
+
+.tecnologia-tag {
+    background-color: #1a1a1a;
+    color: #F08080; /* Rosa Claro - Cor de destaque */
+    border: 1px solid #F08080; /* Rosa Claro para a borda */
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Estilos para as seções */
+.secao__projetos {
+    padding: 5% 15%;
+}
+
+.secao__titulo {
+    font-family: 'Krona One', sans-serif;
+    font-size: 2rem;
+    color: #F08080; /* Rosa Claro - Cor de destaque */
+    margin-bottom: 40px;
+}
+
+.projetos__lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.projeto__card {
+    background-color: #1a1a1a; /* Cinza escuro para o fundo dos cards */
+    border: 2px solid #333333; /* Cinza escuro para a borda dos cards */
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px; /* Aumenta a largura dos cards */
+    min-height: 250px; /* Define uma altura mínima para manter o alinhamento */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.projeto__card h3 {
+    font-family: 'Krona One', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.projeto__card p {
+    font-size: 0.9rem; /* Tamanho da fonte menor */
+    margin-bottom: 15px;
+}
+
+.projeto__card a {
+    color: #F08080; /* Rosa Claro - Cor de destaque */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.projeto__card a:hover {
+    color: #FFFFFF; /* Branco no hover */
+}
+
+/* Nova classe para as tags de tecnologia em cada card de projeto */
+.tecnologias-projeto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end; /* Alinha os itens à direita */
+    margin-top: auto; /* Empurra o contêiner para a parte inferior do card */
+}
+
+/* Estilos do rodapé */
+.rodape {
+    background-color: #1a1a1a; /* Cinza escuro para o rodapé */
+    color: #FFFFFF; /* Branco para o texto do rodapé */
+    padding: 24px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+}
