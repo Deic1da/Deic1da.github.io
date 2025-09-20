@@ -1,20 +1,37 @@
 /* Importação de fonte do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Krona+One&display=swap');
 
-/* Reset básico para remover estilos padrão do navegador */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* Scroll suave */
+}
+
 body {
-    background-color: #000000; /* Preto - Cor de fundo principal */
-    color: #FFFFFF; /* Branco - Cor do texto principal */
+    background-color: #000;
+    color: #fff;
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Estilos da seção principal */
+/* Animação base */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Seção principal */
 .apresentacao {
     padding: 5% 15%;
     display: flex;
@@ -33,40 +50,39 @@ body {
 .apresentacao__conteudo__titulo {
     font-family: 'Krona One', sans-serif;
     font-size: 2.25rem;
-    color: #F08080; /* Rosa Claro - Cor de destaque */
+    color: #F08080;
 }
 
 .apresentacao__conteudo__texto {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
-/* Estilos para os botões de link (LinkedIn, GitHub, etc.) */
 .apresentacao__links {
     display: flex;
-    flex-wrap: wrap; /* Permite que os botões quebrem a linha */
+    flex-wrap: wrap;
     gap: 16px;
-    justify-content: flex-start; /* Alinha os botões à esquerda */
+    justify-content: flex-start;
 }
 
 .apresentacao__links__navegacao {
     display: block;
-    width: 150px; /* Diminui a largura dos botões */
+    width: 150px;
     text-align: center;
-    border: 2px solid #F08080; /* Rosa Claro - Cor de destaque */
+    border: 2px solid #F08080;
     border-radius: 8px;
-    padding: 21.5px 0;
+    padding: 12px 0;
     text-decoration: none;
-    color: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem; /* Diminui o tamanho da fonte */
-    transition: background-color 0.3s;
+    color: #fff;
+    font-size: 1rem;
+    transition: 0.3s;
 }
-
 .apresentacao__links__navegacao:hover {
-    background-color: #333333; /* Cinza escuro no hover */
+    background-color: #F08080;
+    color: #000;
 }
 
-/* Nova seção para a imagem e tecnologias */
+/* Imagem e tecnologias */
 .apresentacao__imagem__tecnologias {
     width: 40%;
     display: flex;
@@ -78,59 +94,65 @@ body {
 .apresentacao__imagem {
     width: 250px;
     height: 250px;
-    border-radius: 50%; /* Torna a imagem redonda */
+    border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #F08080; /* Adiciona uma borda rosa para destaque */
+    border: 3px solid #F08080;
+    transition: 0.3s;
+}
+.apresentacao__imagem:hover {
+    box-shadow: 0 0 15px #F08080;
 }
 
-/* Estilos para as tags de tecnologia */
+/* Tags */
 .tecnologias-lista {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center; /* Centraliza as tags */
+    justify-content: center;
 }
-
 .tecnologia-tag {
     background-color: #1a1a1a;
-    color: #F08080; /* Rosa Claro - Cor de destaque */
-    border: 1px solid #F08080; /* Rosa Claro para a borda */
+    color: #F08080;
+    border: 1px solid #F08080;
     border-radius: 5px;
-    padding: 8px 12px;
-    font-size: 1rem;
+    padding: 6px 10px;
+    font-size: 0.9rem;
     font-weight: 600;
 }
 
-/* Estilos para as seções */
+/* Projetos */
 .secao__projetos {
     padding: 5% 15%;
 }
-
 .secao__titulo {
     font-family: 'Krona One', sans-serif;
     font-size: 2rem;
-    color: #F08080; /* Rosa Claro - Cor de destaque */
+    color: #F08080;
     margin-bottom: 40px;
 }
 
 .projetos__lista {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    justify-content: center;
 }
 
 .projeto__card {
-    background-color: #1a1a1a; /* Cinza escuro para o fundo dos cards */
-    border: 2px solid #333333; /* Cinza escuro para a borda dos cards */
+    background-color: #1a1a1a;
+    border: 2px solid #333;
     border-radius: 8px;
     padding: 20px;
-    width: 400px; /* Aumenta a largura dos cards */
-    min-height: 250px; /* Define uma altura mínima para manter o alinhamento */
+    min-height: 250px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: 0.3s;
+}
+.projeto__card:hover {
+    transform: translateY(-8px);
+    border-color: #F08080;
+    box-shadow: 0 0 15px rgba(240, 128, 128, 0.4);
 }
 
 .projeto__card h3 {
@@ -138,38 +160,34 @@ body {
     font-size: 1.25rem;
     margin-bottom: 10px;
 }
-
 .projeto__card p {
-    font-size: 0.9rem; /* Tamanho da fonte menor */
+    font-size: 0.9rem;
     margin-bottom: 15px;
 }
-
 .projeto__card a {
-    color: #F08080; /* Rosa Claro - Cor de destaque */
+    color: #F08080;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: 0.3s;
 }
-
 .projeto__card a:hover {
-    color: #FFFFFF; /* Branco no hover */
+    color: #fff;
 }
 
-/* Nova classe para as tags de tecnologia em cada card de projeto */
+/* Tags nos projetos */
 .tecnologias-projeto {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    justify-content: flex-end; /* Alinha os itens à direita */
-    margin-top: auto; /* Empurra o contêiner para a parte inferior do card */
+    justify-content: flex-end;
+    margin-top: auto;
 }
 
-/* Estilos do rodapé */
+/* Rodapé */
 .rodape {
-    background-color: #1a1a1a; /* Cinza escuro para o rodapé */
-    color: #FFFFFF; /* Branco para o texto do rodapé */
+    background-color: #1a1a1a;
+    color: #fff;
     padding: 24px;
     text-align: center;
     font-size: 1rem;
-    font-weight: 400;
 }
