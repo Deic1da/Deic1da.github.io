@@ -199,35 +199,83 @@ body {
     font-size: 1rem;
 }
 
+
 /* Estilos para responsividade */
 @media (max-width: 1200px) {
     .apresentacao {
-        flex-direction: column;
+        /* Muda a direção do layout para que os elementos fiquem um abaixo do outro */
+        flex-direction: column; 
     }
     .apresentacao__conteudo, .apresentacao__imagem__tecnologias {
-        width: 100%;
+        /* Faz com que o conteúdo e a imagem ocupem toda a largura disponível */
+        width: 100%; 
     }
     .apresentacao__conteudo__titulo {
         font-size: 2rem;
     }
+    .apresentacao__conteudo__texto {
+        /* Ajusta o tamanho da fonte para a leitura em telas menores */
+        font-size: 1.25rem;
+        text-align: center;
+    }
+    .apresentacao__imagem {
+        /* Aumenta a imagem no tablet para dar mais destaque */
+        width: 300px;
+        height: 300px;
+    }
+    .apresentacao__links {
+        /* Centraliza os botões em telas de tablet */
+        justify-content: center;
+    }
+    .secao__projetos {
+        /* Ajusta o padding para telas menores */
+        padding: 5% 5%;
+    }
+    .secao__titulo {
+        font-size: 1.75rem;
+    }
 }
 
 @media (max-width: 768px) {
+    /* Ajustes específicos para telas de celular */
+    .apresentacao {
+        /* Diminui o padding horizontal para ter mais espaço */
+        padding: 10% 5%; 
+        gap: 40px;
+    }
     .apresentacao__conteudo__titulo {
-        font-size: 1.75rem;
+        font-size: 1.5rem; /* Diminui o título para caber na tela */
+        text-align: center;
     }
     .apresentacao__conteudo__texto {
-        font-size: 1.25rem;
+        font-size: 1rem; /* Tamanho de texto padrão para celulares */
+    }
+    .apresentacao__links {
+        /* Os botões devem ficar um embaixo do outro para facilitar o clique */
+        flex-direction: column;
+        align-items: center; 
     }
     .apresentacao__links__navegacao {
-        width: 120px;
-        padding: 15px 0;
-        font-size: 0.9rem;
+        width: 80%; /* Os botões ficam mais largos para ocupar a tela */
+        padding: 18px 0;
     }
-    .projeto__card {
-        width: 100%;
+    .apresentacao__imagem {
+        width: 200px; /* Reduz o tamanho da imagem de perfil */
+        height: 200px;
+    }
+    .tecnologia-tag {
+        font-size: 0.8rem; /* Tags menores para economizar espaço */
     }
     .secao__titulo {
+        text-align: center;
         font-size: 1.5rem;
+    }
+    .projeto__card {
+        width: 90%; /* Cartões ocupam quase toda a largura */
+        margin: 0 auto; /* Centraliza o cartão */
+        min-height: auto;
+    }
+    .projeto__card p {
+        font-size: 0.8rem;
     }
 }
